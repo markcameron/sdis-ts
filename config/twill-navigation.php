@@ -24,16 +24,16 @@ return [
     //     ],
     // ],
 
-    'featured' => [
-        'title' => 'Features',
-        'route' => 'admin.featured.homepage',
-        'primary_navigation' => [
-            'homepage' => [
-                'title' => 'Homepage',
-                'route' => 'admin.featured.homepage',
-            ],
-        ],
-    ],
+    // 'featured' => [
+    //     'title' => 'Features',
+    //     'route' => 'twill.featured.homepage',
+    //     'primary_navigation' => [
+    //         'homepage' => [
+    //             'title' => 'Homepage',
+    //             'route' => 'twill.featured.homepage',
+    //         ],
+    //     ],
+    // ],
 
     'stats' => [
         'title' => 'Statistiques',
