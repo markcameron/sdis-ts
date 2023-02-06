@@ -1,0 +1,45 @@
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.home-hero__bg {
+  min-height: 300px;
+  min-width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+}
+
+@screen md {
+  .home-hero__bg {
+    min-height: 500px;
+  }
+}
+
+@screen lg {
+  .home-hero__bg {
+    min-height: 700px;
+  }
+}
+
+@screen xl {
+  .home-hero__bg {
+    min-height: 800px;
+  }
+}
+
+.secteur-thumbnail,
+.recrutement-thumbnail {
+  min-height: 500px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center top;
+}
