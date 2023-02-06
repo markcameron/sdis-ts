@@ -1,6 +1,10 @@
 <?php
 
 return [
+    'enabled' => [
+        'buckets' => true,
+    ],
+
     'locale' => 'fr',
     'fallback_locale' => 'en',
 
