@@ -43,3 +43,13 @@
   background-size: contain;
   background-position: center top;
 }
+
+#intervention-sectors svg {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+#intervention-sectors .village:hover {
+  fill: #b9cce4;
+  cursor: pointer;
+}
