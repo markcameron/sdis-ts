@@ -1,29 +1,6 @@
 <?php
 
 return [
-    // 'homepage' => [
-    //     'title' => 'Home',
-    //     // 'route' => 'homepage',
-    //     'buckets' => [
-    //         'homepage' => [
-    //             'name' => 'Home Stats',
-    //             'buckets' => [
-    //                 'home_stats' => [
-    //                     'name' => 'Home Stats',
-    //                     'bucketables' => [
-    //                         [
-    //                             'module' => 'stats',
-    //                             'name' => 'Stats',
-    //                             'scopes' => ['published' => true],
-    //                         ],
-    //                     ],
-    //                     'max_items' => 5,
-    //                 ],
-    //             ],
-    //         ],
-    //     ],
-    // ],
-
     'featured' => [
         'title' => 'Features',
         'route' => 'admin.featured.homepage',
@@ -40,6 +17,16 @@ return [
         'module' => true,
     ],
 
+    'interventions' => [
+        'title' => 'Interventions',
+        'module' => true,
+    ],
+
+    'homepageHeroes' => [
+        'title' => 'HomepageHeroes',
+        'module' => true,
+    ],
+
     'stats' => [
         'title' => 'Statistiques',
         'module' => true,
@@ -47,11 +34,6 @@ return [
 
     'emergencyNumbers' => [
         'title' => 'Emergency Numbers',
-        'module' => true,
-    ],
-
-    'interventions' => [
-        'title' => 'Interventions',
         'module' => true,
     ],
 ];

@@ -1,6 +1,7 @@
 @extends('layouts.site')
 
 @section('content')
+    <x-homepage-hero></x-homepage-hero>
     <x-stats></x-stats>
     <x-news-recent></x-news-recent>
     <x-interventions></x-interventions>

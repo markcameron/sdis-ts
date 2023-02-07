@@ -27,6 +27,7 @@ class AppServiceProvider extends ServiceProvider
         Relation::morphMap([
             'stats' => 'App\Models\Stat',
             'emergencyNumbers' => 'App\Models\EmergencyNumber',
+            'homepageHeroes' => 'App\Models\HomepageHero',
         ]);
     }
 }

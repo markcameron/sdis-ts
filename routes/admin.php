@@ -2,11 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 
-// Register Twill routes here eg.
+Route::module('homepageHeroes');
+
+Route::module('news');
+
 Route::module('stats');
 
 Route::module('emergencyNumbers');
 
 Route::module('interventions');
-
-Route::module('news');
