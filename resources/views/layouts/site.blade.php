@@ -21,9 +21,9 @@
             <div class="mx-auto max-w-7xl px-6">
                 <div class="flex items-center justify-between py-6 md:space-x-10">
                     <div class="flex justify-start lg:w-0 lg:flex-1">
-                        <a href="#">
-                            <span class="sr-only">Your Company</span>
-                            <img src="../images/sdis-logo.svg" class="h-10 w-auto md:h-12 lg:h-16" alt="">
+                        <a href="{{ route('homepage') }}">
+                            <span class="sr-only">SDIS Terre Sainte</span>
+                            <img src="{{ asset('images/sdis-logo.svg') }}" class="h-10 w-auto md:h-12 lg:h-16" alt="">
                         </a>
                     </div>
                     <div class="-my-2 -mr-2 lg:hidden">
@@ -88,7 +88,7 @@
                     <div class="px-5 pt-5 pb-6">
                         <div class="flex items-center justify-between">
                             <div>
-                                <img class="h-10 w-auto md:h-12" src="../images/sdis-logo.svg" alt="Your Company">
+                                <img class="h-10 w-auto md:h-12" src="{{ asset('images/sdis-logo.svg') }}" alt="SDIS Terre Sainte">
                             </div>
                             <div>
                                 <button @click="isOpen = !isOpen" type="button"
