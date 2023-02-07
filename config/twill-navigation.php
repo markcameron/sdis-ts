@@ -44,4 +44,9 @@ return [
         'title' => 'Emergency Numbers',
         'module' => true,
     ],
+
+    'interventions' => [
+        'title' => 'Interventions',
+        'module' => true,
+    ],
 ];

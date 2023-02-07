@@ -6,3 +6,5 @@ use Illuminate\Support\Facades\Route;
 Route::module('stats');
 
 Route::module('emergencyNumbers');
+
+Route::module('interventions');
