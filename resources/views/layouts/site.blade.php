@@ -7,6 +7,7 @@
 
   <title>SDIS | Bienvenue</title>
 
+  <link rel="shortcut icon" href="/images/favicon.png">
   @vite(['resources/js/app.js'])
 </head>
 <body>
