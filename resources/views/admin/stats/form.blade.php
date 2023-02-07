@@ -7,9 +7,9 @@
         'maxlength' => 100,
     ])
 
-    @formField('files', [
-        'name' => 'single_file',
+    @formField('medias', [
+        'name' => 'icon',
         'label' => 'Icône',
-        'note' => 'Add one file (per language)',
+        'note' => 'Add one file Media',
     ])
 @stop
