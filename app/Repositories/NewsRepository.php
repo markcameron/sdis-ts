@@ -30,6 +30,7 @@ class NewsRepository extends ModuleRepository
         return $this->model
             ->published()
             ->orderBy('created_at', 'desc')
+            ->take(3)
             ->get();
     }
 }

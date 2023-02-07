@@ -18,6 +18,7 @@ class InterventionRepository extends ModuleRepository
         return $this->model
             ->published()
             ->orderBy('date', 'desc')
+            ->take(5)
             ->get();
     }
 }
