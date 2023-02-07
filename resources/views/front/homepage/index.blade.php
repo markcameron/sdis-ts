@@ -2,6 +2,7 @@
 
 @section('content')
     <x-stats></x-stats>
+    <x-news-recent></x-news-recent>
     <x-interventions></x-interventions>
     <x-emergency-numbers></x-emergency-numbers>
 

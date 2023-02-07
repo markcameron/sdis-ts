@@ -35,6 +35,11 @@ return [
         ],
     ],
 
+    'news' => [
+        'title' => 'News',
+        'module' => true,
+    ],
+
     'stats' => [
         'title' => 'Statistiques',
         'module' => true,
