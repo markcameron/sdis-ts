@@ -21,7 +21,7 @@
                 Devenez Sapeur Pompier !</h2>
             <img src="{{ asset('images/recrutement-thumbnail.jpg') }}" class="w-full" alt="">
             <div class="absolute inset-x-0 bottom-0 mb-16 text-center">
-                <a href=""
+                <a href="https://www.118-info.ch" target="_blank"
                     class="bg-primary hover:bg-primary-dark rounded-md px-4 py-3 text-xl font-bold text-white">118-info.ch</a>
             </div>
         </div>
