@@ -43,9 +43,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: build-artifacts
-        path: |
-          vendor/
-          public/
+        path: artifacts.tar
         retention-days: 1
 
   deployStaging:
