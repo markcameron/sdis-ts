@@ -2,6 +2,7 @@ node_modules
 .git
 .gitignore
 .gitattributes
+.github
 .env
 .env.example
 .editorconfig
@@ -10,3 +11,4 @@ docker-compose.yml
 *.config.js
 phpunit.xml
 artifacts.tar
+timestamps
