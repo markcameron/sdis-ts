@@ -41,9 +41,9 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: build-artifacts
-      path: |
-        vendor/
-        public/
+        path: |
+          vendor/
+          public/
 
   deployStaging:
     name: Deploy to Staging
