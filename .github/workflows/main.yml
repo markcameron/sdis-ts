@@ -37,7 +37,13 @@ jobs:
       run: npm install -f
     - name: Run vite build script
       run: npm run build
-
+    - name: Upload artifacts for deployment job
+      uses: actions/upload-artifact@v3
+      with:
+        name: build-artifacts
+      path: |
+        vendor/
+        public/
 
   deployStaging:
     name: Deploy to Staging
@@ -50,10 +56,13 @@ jobs:
       url: https://new.sdis-ts.ch
 
     steps:
-      # - name: Download artifact from build job
-      #   uses: actions/download-artifact@v3
-      #   with:
-      #     name: node-app
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      # Download build artifacts from `build` job
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v3
+        with:
+          name: build-artifacts
 
       - name: Debug folder
         run: ls -la
