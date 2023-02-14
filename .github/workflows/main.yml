@@ -74,7 +74,7 @@ jobs:
       - name: rsync deployment staging
         uses: burnett01/rsync-deployments@5.2.1
         with:
-          switches: -rtu --delete --specials --include-from=.rsync_ignore
+          switches: -rtu --delete --specials --exclude-from=.rsync_ignore
           path: .
           remote_path: ${{ secrets.DEPLOY_PATH }}
           remote_host: ${{ secrets.DEPLOY_HOST }}
