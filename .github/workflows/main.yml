@@ -55,8 +55,8 @@ jobs:
       #   with:
       #     name: node-app
 
-      # - name: unzip artifact for deployment
-      #   run: unzip release.zip
+      - name: Debug folder
+        run: ls -la
 
       # rsync deploy
       - name: rsync deployment staging
