@@ -37,6 +37,8 @@ jobs:
       run: npm install -f
     - name: Run vite build script
       run: npm run build
+    - name: Create tar ball with artifacts
+      run: tar -cf artifacts.tar public/ vendor/
     - name: Upload artifacts for deployment job
       uses: actions/upload-artifact@v3
       with:
@@ -44,6 +46,7 @@ jobs:
         path: |
           vendor/
           public/
+        retention-days: 1
 
   deployStaging:
     name: Deploy to Staging
@@ -63,6 +66,8 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: build-artifacts
+      - name: Extract artifact tarball
+        run: tar -xf artifacts.tar
 
       - name: Debug folder
         run: ls -la
