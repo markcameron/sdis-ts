@@ -3,17 +3,20 @@
 namespace App\Services;
 
 use App\Enums\Village;
+use Illuminate\Support\Str;
 use App\Models\Intervention;
 use BeyondCode\Mailbox\InboundEmail;
 
 class InterventionService {
     public function createFromEmail(InboundEmail $email): void
     {
+        $message = Str::replace(array("\r", "\n"), '', $email->text());
+
         $intervention = Intervention::create([
-            'title' => $email->text(),
-            'description' => $this->extractType($email->text()),
-            'type' => $this->extractType($email->text()),
-            'village' => $this->extractVillage($email->text()),
+            'title' => $message,
+            'description' => $this->extractType($message),
+            'type' => $this->extractType($message),
+            'village' => $this->extractVillage($message),
             'date' => $email->date(),
         ]);
 
