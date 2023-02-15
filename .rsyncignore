@@ -13,3 +13,4 @@ phpunit.xml
 artifacts.tar
 timestamps
 storage
+public/storage
