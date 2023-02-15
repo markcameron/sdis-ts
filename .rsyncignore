@@ -12,4 +12,4 @@ docker-compose.yml
 phpunit.xml
 artifacts.tar
 timestamps
-storage/app/public
+storage
