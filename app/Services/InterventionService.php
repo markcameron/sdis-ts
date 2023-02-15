@@ -10,7 +10,10 @@ use BeyondCode\Mailbox\InboundEmail;
 class InterventionService {
     public function createFromEmail(InboundEmail $email): void
     {
-        $message = Str::replace(array("\r", "\n"), '', $email->text());
+        // Remove new lines
+        $message = Str::replace(["\r", "\n"], ' ', $email->text());
+        // Remove double or more consecutive spaces
+        $message = Str::of($message)->replaceMatches('/ {2,}/', ' ');
 
         $intervention = Intervention::create([
             'title' => $message,
