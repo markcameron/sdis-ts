@@ -32,15 +32,15 @@ class InterventionService {
         $intervention->update(['published' => $publishedStatus]);
     }
 
-    public function extractType(string $text): string
+    public function extractType(string $text): ?string
     {
         preg_match('/.* - (.+) \(.*/mU', $text, $matches);
-        return $matches[1];
+        return $matches[1] ?? null;
     }
 
     public function extractVillage(string $text): ?string
     {
         preg_match('/.*\((.+) -.*\).*/mU', $text, $matches);
-        return Village::fromIntervention($matches[1])?->value;
+        return Village::fromIntervention($matches[1] ?? null)?->value;
     }
 }

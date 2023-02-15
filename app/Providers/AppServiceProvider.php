@@ -33,8 +33,12 @@ class AppServiceProvider extends ServiceProvider
             'homepageHeroes' => 'App\Models\HomepageHero',
         ]);
 
-        Mailbox::catchAll(function (InboundEmail $email) {
+        Mailbox::subject('INFO MOBILISATION', function (InboundEmail $email) {
             resolve(InterventionService::class)->createFromEmail($email);
+        });
+
+        Mailbox::fallback(function (InboundEmail $email) {
+            // Just log it in DB `mailbox_inbound_emails`
         });
     }
 }

@@ -12,7 +12,7 @@ enum Village: string {
     case Mies = 'Mies';
     case Tannay = 'Tannay';
 
-    public static function fromIntervention(string $village): ?self
+    public static function fromIntervention(?string $village): ?self
     {
         return match($village)
         {
