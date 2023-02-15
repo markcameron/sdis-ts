@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Services\InterventionService;
 use BeyondCode\Mailbox\InboundEmail;
 use BeyondCode\Mailbox\Facades\Mailbox;
 use Illuminate\Support\ServiceProvider;
@@ -33,7 +34,7 @@ class AppServiceProvider extends ServiceProvider
         ]);
 
         Mailbox::catchAll(function (InboundEmail $email) {
-            // Handle the incoming email
+            resolve(InterventionService::class)->createFromEmail($email);
         });
     }
 }

@@ -1,8 +1,10 @@
 <?php
 
+use App\Mail\InterventionExample;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\HomepageController;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('test-mail', function() {
+    Mail::to('alarmes-sdis@kram.xyz')->send(new InterventionExample());
+});
 
 Route::get('/', HomepageController::class)->name('homepage');
 
