@@ -11,3 +11,5 @@ Route::module('stats');
 Route::module('emergencyNumbers');
 
 Route::module('interventions');
+
+Route::module('documents');

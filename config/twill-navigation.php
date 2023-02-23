@@ -22,6 +22,11 @@ return [
         'module' => true,
     ],
 
+    'documents' => [
+        'title' => 'Documents',
+        'module' => true,
+    ],
+
     'homepageHeroes' => [
         'title' => 'HomepageHeroes',
         'module' => true,
