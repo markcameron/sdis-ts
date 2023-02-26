@@ -12,9 +12,15 @@ class InterventionService
 {
     public function createFromEmail(InboundEmail $email): void
     {
-        Log::warning('MAIL MESSAGE: ', $email->message());
-        Log::warning('MAIL TEXT: ', $email->text());
-        Log::warning('MAIL HTML: ', $email->html());
+        Log::warning('MAIL MESSAGE: ', [
+            'message' => $email->message()
+        ]);
+        Log::warning('MAIL TEXT: ', [
+            'text' => $email->text()
+        ]);
+        Log::warning('MAIL HTML: ', [
+            'html' => $email->html()
+        ]);
 
         // Remove new lines
         $message = Str::replace(["\r", "\n"], ' ', $email->message());
