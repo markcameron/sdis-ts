@@ -28,7 +28,7 @@ class InterventionService
         $message = Str::of($message)->replaceMatches('/ {2,}/', ' ');
 
         $intervention = Intervention::create([
-            'title' => $message,
+            'title' => 'info mobilisation',
             'description' => $this->extractType($message),
             'type' => $this->extractType($message),
             'village' => $this->extractVillage($message),
