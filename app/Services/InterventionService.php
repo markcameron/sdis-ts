@@ -12,9 +12,6 @@ class InterventionService
 {
     public function createFromEmail(InboundEmail $email): void
     {
-        Log::warning('MAIL MESSAGE: ', [
-            'message' => $email->message()
-        ]);
         Log::warning('MAIL TEXT: ', [
             'text' => $email->text()
         ]);
@@ -23,12 +20,12 @@ class InterventionService
         ]);
 
         // Remove new lines
-        $message = Str::replace(["\r", "\n"], ' ', $email->message());
+        $message = Str::replace(["\r", "\n"], ' ', $email->html());
         // Remove double or more consecutive spaces
         $message = Str::of($message)->replaceMatches('/ {2,}/', ' ');
 
         $intervention = Intervention::create([
-            'title' => 'info mobilisation',
+            'title' => $message,
             'description' => $this->extractType($message),
             'type' => $this->extractType($message),
             'village' => $this->extractVillage($message),
