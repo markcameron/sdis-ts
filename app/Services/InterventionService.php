@@ -5,13 +5,19 @@ namespace App\Services;
 use App\Enums\Village;
 use Illuminate\Support\Str;
 use App\Models\Intervention;
+use Illuminate\Support\Facades\Log;
 use BeyondCode\Mailbox\InboundEmail;
 
-class InterventionService {
+class InterventionService
+{
     public function createFromEmail(InboundEmail $email): void
     {
+        Log::warning('MAIL MESSAGE: ', $email->message());
+        Log::warning('MAIL TEXT: ', $email->text());
+        Log::warning('MAIL HTML: ', $email->html());
+
         // Remove new lines
-        $message = Str::replace(["\r", "\n"], ' ', $email->text());
+        $message = Str::replace(["\r", "\n"], ' ', $email->message());
         // Remove double or more consecutive spaces
         $message = Str::of($message)->replaceMatches('/ {2,}/', ' ');
 
