@@ -155,7 +155,7 @@
 
     <footer class="bg-black" aria-labelledby="footer-heading">
         <h2 id="footer-heading" class="sr-only">Footer</h2>
-        <div class="mx-auto max-w-7xl px-6 pb-8 pt-20 sm:pt-24 lg:px-8 lg:pt-32">
+        <div class="mx-auto max-w-7xl px-6 pb-8 pt-4 sm:pt-24 lg:px-8 lg:pt-32">
             <div class="xl:grid xl:grid-cols-3 xl:gap-8">
 
               <div class="mt-10 xl:mt-0">
@@ -196,7 +196,7 @@
                 </address>
             </div>
 
-                <div class="grid grid-cols-2 gap-8 xl:col-span-2">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 xl:col-span-2">
 
                     <div class="">
                         <h3 class="text-sm font-semibold leading-6 text-gray-100">Liens</h3>
@@ -223,7 +223,7 @@
                         </ul>
                     </div>
 
-                    <div class="md:grid md:grid-cols-2 md:gap-8">
+                    <div class="grid grid-cols-2 gap-8">
                         <div>
                             <h3 class="text-md font-semibold leading-6 text-gray-100">Outils</h3>
                             <ul role="list" class="mt-6 space-y-4">
@@ -247,7 +247,7 @@
                             </ul>
                         </div>
 
-                        <div class="mt-10 md:mt-0">
+                        <div class="md:mt-0">
                             <h3 class="text-sm font-semibold leading-6 text-gray-100">Legal</h3>
                             <ul role="list" class="mt-6 space-y-4">
                                 <li>
