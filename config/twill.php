@@ -16,6 +16,25 @@ return [
         'original_media_for_extensions' => ['svg'],
     ],
 
+    'block_editor' => [
+        'block_single_layout' => 'site.layouts.block', // layout to use when rendering a single block in the editor
+        'block_views_path' => 'site.blocks',
+        'crops' => [
+            'image' => [
+                'default' => [
+                    [
+                        'name' => 'default',
+                        'ratio' => 0,
+                        'minValues' => [
+                            'width' => 100,
+                            'height' => 100,
+                        ],
+                    ],
+                ],
+            ],
+        ],
+    ],
+
     'buckets' => [
         'homepage' => [
             'name' => 'Home Stats',

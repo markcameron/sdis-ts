@@ -53,3 +53,15 @@
   fill: #b9cce4;
   cursor: pointer;
 }
+
+.page-content p {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.page-content p a {
+  --tw-text-opacity: 1;
+  color: rgb(181 18 19 / var(--tw-text-opacity));
+  font-weight: 700;
+}

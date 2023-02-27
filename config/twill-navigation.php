@@ -17,6 +17,11 @@ return [
         'module' => true,
     ],
 
+    'pages' => [
+        'title' => 'Pages',
+        'module' => true,
+    ],
+
     'interventions' => [
         'title' => 'Interventions',
         'module' => true,

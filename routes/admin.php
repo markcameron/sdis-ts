@@ -6,6 +6,8 @@ Route::module('homepageHeroes');
 
 Route::module('news');
 
+Route::module('pages');
+
 Route::module('stats');
 
 Route::module('emergencyNumbers');

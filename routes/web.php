@@ -4,6 +4,7 @@ use App\Mail\InterventionExample;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\PagesController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\DocumentsController;
 
@@ -27,3 +28,5 @@ Route::get('/', HomepageController::class)->name('homepage');
 Route::get('actualites/{slug}', [NewsController::class, 'show'])->name('news.show');
 
 Route::get('documents', [DocumentsController::class, 'index'])->name('documents');
+
+Route::get('{slug}', [PagesController::class, 'show'])->name('news.show');

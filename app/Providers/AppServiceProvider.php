@@ -31,7 +31,8 @@ class AppServiceProvider extends ServiceProvider
             'stats' => 'App\Models\Stat',
             'emergencyNumbers' => 'App\Models\EmergencyNumber',
             'homepageHeroes' => 'App\Models\HomepageHero',
-            'documents' => 'App\Models\Documents',
+            'documents' => 'App\Models\Document',
+            'pages' => 'App\Models\Page',
         ]);
 
         Mailbox::subject('INFO MOBILISATION', function (InboundEmail $email) {
