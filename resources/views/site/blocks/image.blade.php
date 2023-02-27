@@ -1,0 +1,1 @@
+<img src="{{ $block->image('image') }}" class="w-full h-auto py-12" alt="">
