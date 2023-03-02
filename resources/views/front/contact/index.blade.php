@@ -1,9 +1,9 @@
 @extends('layouts.site')
 
 @section('content')
-
     <div class="container mx-auto my-16 max-w-7xl px-4">
         <div class="items-start gap-24 lg:flex">
+
             <div class="xl:1/3 mb-16 lg:w-1/2">
                 <h1 class="mb-8 font-barlowCondensed text-5xl uppercase text-primary">Contactez-nous</h1>
                 <p class="text-lg">Vous avez des question ou des remarques concernant le SDIS Terre-Sainte ? Nous sommes à
@@ -17,8 +17,8 @@
                                 d="M13.01 39.193C2.037 22.737 0 21.048 0 15 0 6.716 6.492 0 14.5 0S29 6.716 29 15c0 6.048-2.037 7.737-13.01 24.193a1.78 1.78 0 01-2.98 0zM14.5 21.25c3.337 0 6.042-2.798 6.042-6.25S17.837 8.75 14.5 8.75c-3.337 0-6.042 2.798-6.042 6.25s2.705 6.25 6.042 6.25z" />
                         </svg>
                         <span>
-                            SDIS Terre-Sainte <br>
-                            Chemin Balessert 1 <br>
+                            SDIS Terre-Sainte<br>
+                            Chemin Balessert 1<br>
                             1297 Founex
                         </span>
                     </div>
@@ -28,7 +28,7 @@
                             <path
                                 d="M38.86 28.265l-8.75-3.75a1.874 1.874 0 00-2.188.54l-3.875 4.734a28.959 28.959 0 01-13.844-13.843l4.735-3.875a1.87 1.87 0 00.539-2.188l-3.75-8.75A1.888 1.888 0 009.578.047L1.453 1.922A1.875 1.875 0 000 3.749C0 23.79 16.242 40 36.25 40a1.875 1.875 0 001.829-1.453l1.875-8.125a1.898 1.898 0 00-1.095-2.157z" />
                         </svg>
-                        <a href="tel:+41229609620" class="hover:text-primary">022 960 96 20</a>
+                        <a href="tel:+0229609620" class="hover:text-primary">022 960 96 20</a>
                     </div>
                     <div class="flex items-center gap-6">
                         <svg class="h-auto w-6 text-primary" viewBox="0 0 40 30" fill="currentColor"
@@ -40,76 +40,49 @@
                     </div>
                 </address>
             </div>
-            <form action="{{ route('contact.submit') }}" class="mb-16 lg:w-1/2 xl:w-2/3" method="POST">
+
+            <form action="{{ route('contact.submit') }}" method="POST" class="mb-16 lg:w-1/2 xl:w-2/3">
+                @if ($errors)
+                    <x-alert>
+                        <h3 class="text-sm font-medium text-red-800">Vous avez des erreurs dans votre soumission</h3>
+                        <div class="mt-2 text-sm text-red-700">
+                            <ul role="list" class="list-disc space-y-1 pl-5">
+                                @foreach ($errors as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </x-alert>
+                @endif
+
                 @csrf
-
-                @if (session('success'))
-                    <x-alert type="success" class="mb-4">
-                        <h3 class="text-sm font-medium text-green-800">{{ session('success') }}</h3>
-                    </x-alert>
-                @endif
-
-                @if ($errors->isNotEmpty())
-                    <x-alert type="danger" class="mb-4">
-                        <h3 class="text-sm font-medium text-red-800">Vous avez une erreur dans votre soumission!</h3>
-                    </x-alert>
-                @endif
-
                 <div class="mb-6 grid gap-6">
                     <div class="">
-                        <label for="lastName" @class(['block text-lg', 'text-red-500' => $errors->has('lastName')])>Nom</label>
+                        <label for="firstName" class="block text-lg">Nom</label>
                         <div class="mt-1">
-                            <input type="text" name="lastName" id="lastName" @class([
-                                'block w-full text-lg border shadow-sm p-2',
-                                'border-gray-300' => !$errors->has('lastName'),
-                                'border-red-500' => $errors->has('lastName'),
-                            ])
-                                placeholder="Nom" value="{{ old('lastName') }}">
-                            @if ($errors->has('firstName'))
-                                <p class="mt-1 text-xs italic text-red-500">Le champ nom est obligatoire</p>
-                            @endif
+                            <input type="text" name="first_name" id="firstName"
+                                class="block w-full border border-gray-300 p-2 text-lg shadow-sm" placeholder="Nom">
                         </div>
                     </div>
                     <div class="">
-                        <label for="firstName" @class(['block text-lg', 'text-red-500' => $errors->has('firstName')])>Prénom</label>
+                        <label for="firstName" class="block text-lg">Prénom</label>
                         <div class="mt-1">
-                            <input type="text" name="firstName" id="firstName" @class([
-                                'block w-full text-lg border shadow-sm p-2',
-                                'border-gray-300' => !$errors->has('firstName'),
-                                'border-red-500' => $errors->has('firstName'),
-                            ])
-                                placeholder="Prénom" value="{{ old('firstName') }}">
-                            @if ($errors->has('firstName'))
-                                <p class="mt-1 text-xs italic text-red-500">Le champ prénom est obligatoire</p>
-                            @endif
+                            <input type="text" name="last_name" id="firstName"
+                                class="block w-full border border-gray-300 p-2 text-lg shadow-sm" placeholder="Prénom">
                         </div>
                     </div>
                     <div class="sm:col-span-2 lg:col-span-1 xl:col-span-2">
-                        <label for="email" @class(['block text-lg', 'text-red-500' => $errors->has('email')])>E-mail</label>
+                        <label for="email" class="block text-lg">email</label>
                         <div class="mt-1">
-                            <input type="email" name="email" id="email" @class([
-                                'block w-full text-lg border shadow-sm p-2',
-                                'border-gray-300' => !$errors->has('email'),
-                                'border-red-500' => $errors->has('email'),
-                            ])
-                                placeholder="Email" value="{{ old('email') }}">
-                            @if ($errors->has('email'))
-                                <p class="mt-1 text-xs italic text-red-500">Le champ e-mail est obligatoire</p>
-                            @endif
+                            <input type="email" name="email" id="email"
+                                class="block w-full border border-gray-300 p-2 text-lg shadow-sm" placeholder="Email">
                         </div>
                     </div>
                     <div class="sm:col-span-2 lg:col-span-1 xl:col-span-2">
-                        <label for="message" @class(['block text-lg', 'text-red-500' => $errors->has('message')])>Message</label>
+                        <label for="message" class="block text-lg">message</label>
                         <div class="mt-1">
-                            <textarea name="message" id="message" cols="30" rows="10" @class([
-                                'block w-full text-lg border shadow-sm p-2',
-                                'border-gray-300' => !$errors->has('message'),
-                                'border-red-500' => $errors->has('message'),
-                            ])
-                                placeholder="Message">{{ old('message') }}</textarea>
-                            @if ($errors->has('message'))
-                                <p class="mt-1 text-xs italic text-red-500">Le champ message est obligatoire</p>
-                            @endif
+                            <textarea name="message" id="message" cols="30" rows="10"
+                                class="block w-full border border-gray-300 p-2 text-lg shadow-sm" placeholder="Message"></textarea>
                         </div>
                     </div>
                 </div>
@@ -118,5 +91,4 @@
             </form>
         </div>
     </div>
-
 @endsection

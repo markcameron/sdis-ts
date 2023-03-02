@@ -30,12 +30,13 @@ Route::get('actualites/{slug}', [NewsController::class, 'show'])->name('news.sho
 
 Route::get('documents', [DocumentsController::class, 'index'])->name('documents');
 
-Route::get('{slug}', [PagesController::class, 'show'])->name('news.show');
-
 Route::controller(ContactController::class)->group(function() {
     Route::name('contact.')->prefix('contact')->group(function () {
         Route::get('', 'index')->name('index');
         Route::post('submit', 'submit')->name('submit');
     });
 });
+
+Route::get('{slug}', [PagesController::class, 'show'])->name('news.show');
+
 
