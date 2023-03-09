@@ -1,5 +1,5 @@
 @php
-    $image = $block->imageAsArray('image', 'default');
+    $image = $block->imageAsArray('image', 'default', ['w' => 992]);
 @endphp
 
 <a href="{{ $image['src'] }}">
