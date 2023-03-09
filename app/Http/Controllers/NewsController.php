@@ -3,13 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\News;
-use Illuminate\Http\Request;
 use App\Repositories\NewsRepository;
+use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
     public function __construct(private NewsRepository $repository)
     {
+    }
+
+    public function index()
+    {
+        return view('front.news.index', [
+            'news' => $this->repository->get(perPage: 12),
+        ]);
     }
 
     public function show($slug)

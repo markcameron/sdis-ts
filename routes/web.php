@@ -29,8 +29,12 @@ Route::get('/', HomepageController::class)->name('homepage');
 
 Route::get('interventions', InterventionsController::class)->name('interventions.index');
 
-Route::get('actualites/{slug}', [NewsController::class, 'show'])->name('news.show');
-
+Route::controller(ContactController::class)->group(function () {
+    Route::name('news.')->prefix('actualites')->group(function () {
+        Route::get('', [NewsController::class, 'index'])->name('index');
+        Route::get('{slug}', [NewsController::class, 'show'])->name('show');
+    });
+});
 Route::get('documents', [DocumentsController::class, 'index'])->name('documents');
 
 Route::controller(ContactController::class)->group(function () {
