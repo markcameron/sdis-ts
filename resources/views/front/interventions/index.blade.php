@@ -1,3 +1,7 @@
+@extends('layouts.site')
+
+@section('content')
+
 <section class="container mx-auto my-24 px-4">
     <h2 class="text-primary font-barlowCondensed text-6xl uppercase">Interventions</h2>
     <table class="my-16 block border-t border-gray-200">
@@ -20,9 +24,8 @@
             @endforeach
         </tbody>
     </table>
-    <div class="text-center">
-        <a href="{{ route('interventions.index')}}"
-            class="bg-primary hover:bg-primary-dark rounded-md px-4 py-3 text-xl font-bold text-white">Voir toutes les
-            interventions</a>
-    </div>
+
+    {{ $interventions->links() }}
 </section>
+
+@endsection

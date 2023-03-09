@@ -3,6 +3,7 @@
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DocumentsController;
 use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\InterventionsController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PagesController;
 use App\Mail\InterventionExample;
@@ -25,6 +26,8 @@ Route::get('test-mail', function () {
 });
 
 Route::get('/', HomepageController::class)->name('homepage');
+
+Route::get('interventions', InterventionsController::class)->name('interventions.index');
 
 Route::get('actualites/{slug}', [NewsController::class, 'show'])->name('news.show');
 
