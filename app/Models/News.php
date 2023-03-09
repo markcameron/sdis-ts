@@ -33,6 +33,11 @@ class News extends Model implements Sortable
 
     public $mediasParams = [
         'cover' => [
+            'orig' => [
+                [
+                    'name' => 'orig',
+                ],
+            ],
             'default' => [
                 [
                     'name' => 'default',

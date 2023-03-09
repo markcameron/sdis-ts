@@ -16,6 +16,6 @@
     @formField('tags')
 
     @formField('block_editor', [
-        'blocks' => ['media', 'title', 'text']
+        'blocks' => ['media', 'title', 'text', 'imagegrid']
     ])
 @stop
