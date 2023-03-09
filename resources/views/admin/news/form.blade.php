@@ -14,4 +14,8 @@
     ])
 
     @formField('tags')
+
+    @formField('block_editor', [
+        'blocks' => ['media', 'title', 'text']
+    ])
 @stop
