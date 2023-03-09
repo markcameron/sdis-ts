@@ -4,7 +4,7 @@
         @foreach ($news as $article)
             <li>
                 <a href="{{ route('news.show', $article->slug) }}" class="group block">
-                    <img src="{{ $article->image('cover', 'default') }}" class="mb-4 h-auto w-full" alt="">
+                    <img src="{{ $article->image('cover', 'teaser', ['width' => 485, 'height' => 324]) }}" class="mb-4 h-auto w-full" alt="">
                     <h3 class="group-hover:text-primary text-3xl font-bold">{{ $article->title }}</h3>
                     <div class="mb-2 text-xl">{{ $article->created_at->isoFormat('D MMMM YYYY') }}</div>
                     <p class="mb-2 text-lg md:text-xl">{{ $article->teaser }}</p>

@@ -2,7 +2,7 @@
 
 @section('content')
     @php
-        $image = $news->imageAsArray('cover', 'default');
+        $image = $news->imageAsArray('cover', 'default', ['w' => 992]);
     @endphp
 
     <div class="container max-w-5xl px-4 pb-12 mx-auto">
@@ -14,6 +14,8 @@
             </section>
 
             <div class="page-content">
+                <p class="font-semibold">{{ $news->teaser }}</p>
+
                 {!! $news->renderBlocks() !!}
             </div>
         </div>

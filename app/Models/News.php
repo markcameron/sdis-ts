@@ -37,7 +37,12 @@ class News extends Model implements Sortable
                 [
                     'name' => 'default',
                     'ratio' => 16 / 9,
-                    'width' => 992,
+                ],
+            ],
+            'teaser' => [
+                [
+                    'name' => 'teaser',
+                    'ratio' => 3 / 2,
                 ],
             ],
             'mobile' => [
