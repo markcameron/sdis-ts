@@ -16,7 +16,10 @@ class InterventionsController extends Controller
     public function __invoke(Request $request, InterventionRepository $interventionRepository)
     {
         return view('front.interventions.index', [
-            'interventions' => $interventionRepository->published()->get(perPage: 25),
+            'interventions' => $interventionRepository->get(
+                scopes: ['published' => null],
+                perPage: 25,
+            ),
         ]);
     }
 }
