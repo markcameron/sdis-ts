@@ -15,7 +15,7 @@ class NewsController extends Controller
     public function index()
     {
         return view('front.news.index', [
-            'news' => $this->repository->get(perPage: 12),
+            'news' => $this->repository->published()->get(perPage: 12),
         ]);
     }
 
