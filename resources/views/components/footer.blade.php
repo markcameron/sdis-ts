@@ -13,9 +13,7 @@
                             d="M13.01 39.193C2.037 22.737 0 21.048 0 15 0 6.716 6.492 0 14.5 0S29 6.716 29 15c0 6.048-2.037 7.737-13.01 24.193a1.78 1.78 0 01-2.98 0zM14.5 21.25c3.337 0 6.042-2.798 6.042-6.25S17.837 8.75 14.5 8.75c-3.337 0-6.042 2.798-6.042 6.25s2.705 6.25 6.042 6.25z">
                         </path>
                     </svg>
-                    <span class="text-gray-50">
-                        {!! $address !!}
-                    </span>
+                    <span class="text-gray-50">{!! $address !!}</span>
                 </div>
                 <div class="flex items-center gap-6">
                     <svg class="text-primary h-auto w-6" viewBox="0 0 40 40" fill="currentColor"
