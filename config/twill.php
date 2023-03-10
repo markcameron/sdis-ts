@@ -12,6 +12,8 @@ return [
     'publish_date_format' => 'd F Y H:i', // format used by publication date pickers
     'publish_date_display_format' => 'DD MMMM YYYY HH:mm', // format used when displaying the publication date
 
+    'settings' => true,
+
     'glide' => [
         'original_media_for_extensions' => ['svg'],
     ],
@@ -24,7 +26,8 @@ return [
                 'default' => [
                     [
                         'name' => 'default',
-                        'ratio' => 0,
+                        // 'ratio' => 16/9,
+                        'width' => 992,
                         'minValues' => [
                             'width' => 100,
                             'height' => 100,
