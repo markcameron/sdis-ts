@@ -2,13 +2,10 @@
 
 namespace App\Providers;
 
-use Spatie\Navigation\Section;
 use BeyondCode\Mailbox\InboundEmail;
-use Illuminate\Support\Facades\Auth;
 use App\Services\InterventionService;
 use BeyondCode\Mailbox\Facades\Mailbox;
 use Illuminate\Support\ServiceProvider;
-use Spatie\Navigation\Facades\Navigation;
 use Illuminate\Database\Eloquent\Relations\Relation;
 
 class AppServiceProvider extends ServiceProvider
