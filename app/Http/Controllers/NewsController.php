@@ -17,6 +17,7 @@ class NewsController extends Controller
         return view('front.news.index', [
             'news' => $this->repository->get(
                 scopes: ['published' => null],
+                orders: ['created_at' => 'DESC'],
                 perPage: 12,
             ),
         ]);

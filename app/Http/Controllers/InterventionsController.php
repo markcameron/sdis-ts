@@ -18,6 +18,7 @@ class InterventionsController extends Controller
         return view('front.interventions.index', [
             'interventions' => $interventionRepository->get(
                 scopes: ['published' => null],
+                orders: ['created_at' => 'DESC'],
                 perPage: 25,
             ),
         ]);
